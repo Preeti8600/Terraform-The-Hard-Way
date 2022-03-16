@@ -6,7 +6,7 @@ version: 1
 sources:
   #Files or Directories to be Excluded are mentioned in exclusions
   exclusions:
-    - 'generated'
+    - '.git'
 
     
 # Specify the languages you would like to Scan. Default is all Detected
@@ -22,16 +22,3 @@ sources:
 #    enabled: false
 #  - name: jshint
 #    enabled: true
-
-
-
-call "D:\Repositories\runReport_abs.bat"
-type D:\HistoricalScanAbs\HistoricalScan\EmboldCodeIssuesByCommits.csv >> D:\HistoricalScanAbs\HistoricalScan\DailyEmboldCodeIssuesByCommits.csv
-
-move "D:\HistoricalScanAbs\HistoricalScan\EmboldCodeIssuesByCommits.csv" "%WORKSPACE%"
-
-if exist %WORKSPACE%\DailyEmboldCodeIssuesByCommits.csv (
-    echo file exists
-) else (
-    echo file doesn't exist
-)
